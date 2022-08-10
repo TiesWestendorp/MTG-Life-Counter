@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MenuScreen     from './components/menu-screen'
+import GameScreen     from './components/game-screen'
+
+const screens = {
+  menu:     MenuScreen,
+  game:     GameScreen,
 }
 
-export default App;
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      screen: "menu",
+      amountOfPlayers: null,
+      startingLife: null,
+    }
+  }
+
+  render() {
+    const Screen = screens[this.state.screen]
+    return <Screen setAppState={v=>this.setState(v)} getAppState={()=>this.state} />
+  }
+}
+
+export default App

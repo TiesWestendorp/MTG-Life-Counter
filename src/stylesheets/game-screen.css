@@ -1,0 +1,105 @@
+.magic-game {
+  height: 100vh;
+}
+
+.magic-game__settings {
+  display: flex;
+  height: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.magic-game__settings button {
+  flex: 1 1 0;
+}
+
+.magic-game__starting-player {
+  align-items: center;
+  background: #000000DD;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  height: 100vh;
+  transition: opacity 0.5s;
+  width: 100vw;
+  z-index: 10;
+}
+.magic-game__starting-player--hide {
+  opacity: 0;
+}
+.magic-game__starting-player__contents {
+  background: black;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  flex: 1 1 0;
+  line-height: 200px;
+  text-align: center;
+  height: 200px;
+}
+
+.magic-game__players {
+  display: grid;
+  height: calc(100vh - 30px);
+}
+
+.player--1 { grid-area: p1; }
+.player--2 { grid-area: p2; }
+.player--3 { grid-area: p3; }
+.player--4 { grid-area: p4; }
+.player--5 { grid-area: p5; }
+.player--6 { grid-area: p6; }
+
+.magic-game__players--1 .player__contents {
+  width: calc((min((100vh - 40px), 100vw)));
+}
+.magic-game__players--2 .player__contents {
+  width: calc((min((100vh - 40px)/2, 100vw)));
+}
+.magic-game__players--3 .player__contents,
+.magic-game__players--4 .player__contents {
+  width: calc((min((100vh - 40px)/2, 50vw)));
+}
+.magic-game__players--5 .player__contents,
+.magic-game__players--6 .player__contents {
+  width: calc((min((100vh - 40px)/3, 50vw)));
+}
+
+.magic-game__players--1 {
+  min-height: calc(var(--min-size));
+  grid-template-areas:
+  "p1";
+}
+.magic-game__players--2 {
+  min-height: calc(2 * var(--min-size));
+  grid-template-areas:
+  "p1"
+  "p2";
+}
+.magic-game__players--3 {
+  min-height: calc(2 * var(--min-size));
+  grid-template-areas:
+  "p1 p1 p2 p2"
+  "p3 p3 p3 p3";
+}
+.magic-game__players--4 {
+  min-height: calc(2 * var(--min-size));
+  grid-template-areas:
+  "p1 p2"
+  "p3 p4";
+}
+.magic-game__players--5 {
+  min-height: calc(3 * var(--min-size));
+  grid-template-areas:
+  "p1 p1 p2 p2"
+  "p3 p3 p4 p4"
+  "p5 p5 p5 p5";
+}
+.magic-game__players--6 {
+  min-height: calc(3 * var(--min-size));
+  grid-template-areas:
+  "p1 p2"
+  "p3 p4"
+  "p5 p6";
+}

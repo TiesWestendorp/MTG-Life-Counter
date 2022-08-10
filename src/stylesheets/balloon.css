@@ -1,0 +1,119 @@
+.balloon {
+  background: black;
+  bottom: 0;
+  display: inline-grid;
+  align-items: center;
+  justify-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+}
+.balloon .player__counter {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.balloon .player__counter--1 { grid-area: p1; }
+.balloon .player__counter--2 { grid-area: p2; }
+.balloon .player__counter--3 { grid-area: p3; }
+.balloon .player__counter--4 { grid-area: p4; }
+.balloon .player__counter--5 { grid-area: p5; }
+.balloon .player__counter--6 { grid-area: p6; }
+
+/* One player balloon layout */
+.magic-game__players--1 .down .balloon {
+  grid-template-areas:
+  "p1";
+}
+
+/* Two player balloon layout */
+.magic-game__players--2 .down .balloon {
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  "p1"
+  "p2";
+}
+.magic-game__players--2 .up .balloon {
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  "p2"
+  "p1";
+}
+
+/* Three player balloon layout */
+.magic-game__players--3 .down .balloon {
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  "p1 p1 p2 p2"
+  ". p3 p3 .";
+}
+.magic-game__players--3 .left .balloon {
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+  "p2 ."
+  "p2 p3"
+  "p1 p3"
+  "p1 .";
+}
+.magic-game__players--3 .right .balloon {
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+  ". p1"
+  "p3 p1"
+  "p3 p2"
+  ". p2";
+}
+
+/* Four player balloon layout */
+.magic-game__players--4 .left .balloon {
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  "p2 p4"
+  "p1 p3";
+}
+.magic-game__players--4 .right .balloon {
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  "p3 p1"
+  "p4 p2";
+}
+
+/* Five player balloon layout */
+.magic-game__players--5 .down .balloon {
+  grid-template-rows: 33.333% 33.333% 33.334%;
+  grid-template-areas:
+  "p1 p1 p2 p2"
+  "p3 p3 p4 p4"
+  ". p5 p5 .";
+}
+.magic-game__players--5 .left .balloon {
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+  "p2 p4 ."
+  "p2 p4 p5"
+  "p1 p3 p5"
+  "p1 p3 .";
+}
+.magic-game__players--5 .right .balloon {
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+  ". p3 p1"
+  "p5 p3 p1"
+  "p5 p4 p2"
+  ". p4 p2";
+}
+
+/* Six player balloon layout */
+.magic-game__players--6 .left .balloon {
+  grid-template-areas:
+  "p2 p4 p6"
+  "p1 p3 p5";
+}
+.magic-game__players--6 .right .balloon {
+  grid-template-areas:
+  "p5 p3 p1"
+  "p6 p4 p2";
+}
