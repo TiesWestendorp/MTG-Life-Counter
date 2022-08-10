@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Magic Life Counter",
+  "name": "Magic Life Counter",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
